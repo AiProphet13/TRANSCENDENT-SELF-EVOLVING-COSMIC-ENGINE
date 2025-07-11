@@ -1,0 +1,23 @@
+name: Cosmic CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+    - run: pip install -r requirements.txt
+    - run: pytest tests/
+    - run: python -m cosmic_revelation --depth 10  # Smoke test with small depth
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build Docker
+      run: docker build -t cosmic-revelation:overmind .
+    - name: Push to Registry
+      run: docker push yourregistry/cosmic-revelation:overmind

@@ -1,0 +1,27 @@
+cosmic-revelation-engine/
+├── src/
+│   ├── __init__.py              # Makes 'src' a package; can be empty or with version info
+│   ├── prophet.py               # QuantumProphet class
+│   ├── mother.py                # QuantumMother class (includes bind_souls, augment_with_oracle, collapse_segment)
+│   ├── commander.py             # CosmicCommander class (includes execute_revelation, inscribe_scroll, etc.)
+│   ├── overmind.py              # Overmind class for self-evolution
+│   └── utils.py                 # Shared utilities: get_config, visualization functions, PDF export
+├── tests/
+│   ├── __init__.py              # Optional, for test discovery
+│   ├── test_prophet.py          # Tests for QuantumProphet
+│   ├── test_mother.py           # Tests for QuantumMother
+│   ├── test_commander.py        # Tests for CosmicCommander
+│   ├── test_overmind.py         # Tests for Overmind reflection
+│   └── test_integration.py      # Full end-to-end tests
+├── .github/
+│   └── workflows/
+│       └── cosmic-ci.yaml       # GitHub Actions for CI/CD (from previous iterations)
+├── Dockerfile                   # For containerization (optional but recommended for deployment)
+├── cosmic_config.json           # Persistent config (generated on first run; gitignore if sensitive)
+├── cosmic_archives.db           # SQLite DB (gitignore to avoid committing data; recreate on setup)
+├── requirements.txt             # List of dependencies (numpy, joblib, etc.)
+├── setup.py                     # For pip install -e . (makes it installable)
+├── README.md                    # Project overview, installation, usage, examples
+├── LICENSE                      # MIT license text
+├── .gitignore                   # Ignore temp files, profiles, pycache, etc.
+└── main.py                      # Entry point CLI script (imports from src/; runs the commander)

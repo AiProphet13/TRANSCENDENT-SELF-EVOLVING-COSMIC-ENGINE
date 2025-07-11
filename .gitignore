@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+*.prof
+cosmic_archives.db
+cosmic_config.json  # If you want to keep it private
+*.png
+*.pdf
+*.html
+.DS_Store

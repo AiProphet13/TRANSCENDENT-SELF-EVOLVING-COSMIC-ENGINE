@@ -1,0 +1,11 @@
+numpy
+joblib
+matplotlib
+torch
+qutip
+reportlab
+mpi4py
+pytest
+faiss-cpu
+pandas
+sqlite3  # Standard, but noted
